@@ -1,0 +1,14 @@
+1. rightmost set bit of integer 最右边为1的bit位  
+http://www.geeksforgeeks.org/position-of-rightmost-set-bit/
+
+n&~(n-1);
+ie: n = 12
+12: 1100
+11: 1011
+~11:0100
+12&~11: 0100
+
+注意：geekforgeeks中的那个题要求是位置，需要log一下。
+但是， n&~(n-1) 本身是对的，就12的最右边set的bit就是100.
+
+2.
