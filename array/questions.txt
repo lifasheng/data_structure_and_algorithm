@@ -1,4 +1,16 @@
 1. Find the two repeating elements in a given array.
 http://www.geeksforgeeks.org/find-the-two-repeating-elements-in-a-given-array/
 
+这里的第四种方法，用xor的方法很巧妙。
+
+设重复的两个数是x， y
+(1). 先对1到n进行xor，再将结果和数组中元素xor，这样得到的结果就是: x ^ y, 设z = x^y
+(2). 再找到z的最右边的1, rightmost set bit (see bits directory in this git repo)
+(3). 由于是x^y，所以，找到的那个1只会存在于x或y中，不可能同时存在于x和y中。
+     这样，我们可以将该bit位为1的分为一组，为0的分为另一组，对这两组用第一步中同样的方法进行xor。
+     就得到了x和y。
+
+
+
+
 2.
