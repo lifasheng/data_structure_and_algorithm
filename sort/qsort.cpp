@@ -6,7 +6,10 @@
 using namespace std;
 
 #define M3
+// 强烈建议熟练掌握从前往后扫描的方法，简洁不容易出错，而且好理解。
+// 既适合数组也适合链表，即ForwardIterator即可，不要求BidirectionalIterator。
 
+#if 0
 #ifdef M1
 // scan from both sides to center 
 int partition( int *a, int low, int high ) {
@@ -40,10 +43,11 @@ int partition(int *a, int low, int high)
     return low;
 }
 #endif
+#endif // #if 0
 
 #ifdef M3
 // scan from left to right, last element as pivot
-// http://www.alwayslearn.com/computer%20algorithms/ComputerAlgorithms_QuickSort.html
+// firstHigh: http://www.alwayslearn.com/computer%20algorithms/ComputerAlgorithms_QuickSort.html
 // 参考算法导论
 int partition( int *a, int low, int high ) {
     int pivot = a[high]; // choose last element as pivot
